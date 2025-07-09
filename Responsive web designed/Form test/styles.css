@@ -40,7 +40,7 @@ label{
 .text-inputs, .input-textarea {
     background-color: gainsboro;
     width: 100%;
-    box-sizing: border-box; /* Asegura que el padding no sume al ancho */
-    padding: 8px;           /* Opcional: mejora la apariencia */
+    box-sizing: border-box; 
+    padding: 8px;           
     font-size: 1rem;   
 }

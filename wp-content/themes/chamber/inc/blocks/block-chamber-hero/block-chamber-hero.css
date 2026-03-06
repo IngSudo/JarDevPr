@@ -1,0 +1,47 @@
+.block-chamber-hero {
+  position: relative;
+  height: clamp(260px, 45vw, 400px);
+  width: 100%;
+  overflow: hidden;
+}
+.block-chamber-hero__img-wrap {
+  position: absolute;
+  inset: 0;
+}
+.block-chamber-hero__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.block-chamber-hero__img-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.block-chamber-hero__title-wrap {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  padding: 0 20px;
+}
+.block-chamber-hero__title {
+  color: #ffffff;
+  font-size: clamp(40px, 5vw, 65px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+@media (min-width: 1024px) {
+  .block-chamber-hero {
+    height: 400px;
+  }
+}
+
+/*# sourceMappingURL=block-chamber-hero.css.map */

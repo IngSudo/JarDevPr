@@ -1,0 +1,41 @@
+{
+  "key": "group_block_hero",
+  "title": "Block - Hero",
+  "fields": [
+    {
+      "key": "field_chamber_hero_image",
+      "label": "Hero Image",
+      "name": "chamber_hero_image",
+      "type": "url",
+      "instructions": "",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "https://"
+    },
+    {
+      "key": "field_chamber_hero_title",
+      "label": "Hero Title",
+      "name": "chamber_hero_title",
+      "type": "text",
+      "instructions": "",
+      "required": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/block-hero"
+      }
+    ]
+  ],
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0
+}

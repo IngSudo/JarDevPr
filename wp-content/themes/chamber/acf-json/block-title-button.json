@@ -1,0 +1,43 @@
+{
+  "key": "group_block_title_button",
+  "title": "Block - Title Button",
+  "fields": [
+    {
+      "key": "field_chamber_tb_title",
+      "label": "Title",
+      "name": "chamber_tb_title",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "toolbar": "basic",
+      "media_upload": 0,
+      "tabs": "visual",
+      "delay": 0
+    },
+    {
+      "key": "field_chamber_tb_button",
+      "label": "Button",
+      "name": "chamber_tb_button",
+      "type": "link",
+      "instructions": "",
+      "required": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/block-title-button"
+      }
+    ]
+  ],
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0
+}

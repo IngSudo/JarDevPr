@@ -1,0 +1,78 @@
+.block-chamber-paintings {
+  padding: 75px;
+}
+.block-chamber-paintings__filters {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+.block-chamber-paintings__filters button {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 5px 0;
+  position: relative;
+  transition: opacity 0.3s ease;
+  color: #000;
+}
+.block-chamber-paintings__filters button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+.block-chamber-paintings__filters button:hover::after, .block-chamber-paintings__filters button.active::after {
+  width: 100%;
+}
+.block-chamber-paintings__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+.block-chamber-paintings .gallery-grid-item {
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+.block-chamber-paintings .gallery-grid-item-wrapper {
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block-chamber-paintings .gallery-grid-item-wrapper img {
+  max-height: 100%;
+  cursor: zoom-in;
+  object-fit: contain;
+  display: block;
+}
+.block-chamber-paintings .gallery-grid-item .gallery-caption {
+  margin-top: 15px;
+}
+.block-chamber-paintings .gallery-grid-item .gallery-caption-content {
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .block-chamber-paintings__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .block-chamber-paintings__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*# sourceMappingURL=block-chamber-paintings.css.map */

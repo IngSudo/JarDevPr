@@ -1,0 +1,69 @@
+{
+  "key": "group_block_chamber_paintings",
+  "title": "Block - Chamber Paintings",
+  "fields": [
+    {
+      "key": "field_chamber_paintings_repeater",
+      "label": "Paintings",
+      "name": "chamber_paintings",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Add Painting",
+      "sub_fields": [
+        {
+          "key": "field_chamber_painting_image",
+          "label": "Image",
+          "name": "image",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "medium",
+          "library": "all"
+        },
+        {
+          "key": "field_chamber_painting_description",
+          "label": "Description",
+          "name": "description",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "field_chamber_painting_type",
+          "label": "Painting Type",
+          "name": "type",
+          "type": "select",
+          "choices": {
+            "flow": "Flow",
+            "circle": "Circle",
+            "fluid": "Fluid",
+            "landscape": "Landscape 2.0",
+            "orb": "Orb",
+            "stratum": "Stratum",
+            "surge": "Surge"
+          },
+          "default_value": false,
+          "return_format": "value",
+          "multiple": 0,
+          "allow_null": 0,
+          "ui": 0
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/block-paintings"
+      }
+    ]
+  ],
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0
+}

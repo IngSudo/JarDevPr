@@ -1,0 +1,16 @@
+{
+  "name": "chamber",
+  "version": "1.0.0",
+  "description": "Theme Chamber usando WordPress con ACF",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass assets/scss/:assets/css/ && sass inc/blocks/:inc/blocks/",
+    "watch": "sass --watch assets/scss/:assets/css/ --watch inc/blocks/:inc/blocks/"
+  },
+  "keywords": ["wordpress", "acf", "theme", "scss"],
+  "author": "Jack",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}

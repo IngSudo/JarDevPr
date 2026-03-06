@@ -1,0 +1,28 @@
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0 !important;
+}
+
+body {
+  margin: 0;
+  font-family: $chamber-font-primary;
+  color: $chamber-color-black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

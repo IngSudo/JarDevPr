@@ -35,7 +35,7 @@
 }
 .block-chamber-paintings__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
 .block-chamber-paintings .gallery-grid-item {
@@ -43,7 +43,7 @@
   transition: transform 0.3s ease;
 }
 .block-chamber-paintings .gallery-grid-item-wrapper {
-  height: 420px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +58,7 @@
   margin-top: 15px;
 }
 .block-chamber-paintings .gallery-grid-item .gallery-caption-content {
-  font-size: 1.2em;
+  font-size: 0.9em;
   line-height: 1.6;
   text-transform: uppercase;
   text-align: center;
@@ -103,7 +103,7 @@
 }
 .block-chamber-paintings__modal__desc {
   margin-bottom: 20px;
-  font-size: 1.2em;
+  font-size: clamp(14px, 3vw, 24px);
   line-height: 1.6;
   text-transform: uppercase;
 }
@@ -138,6 +138,12 @@
 @media (min-width: 1024px) {
   .block-chamber-paintings__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .block-chamber-paintings .gallery-grid-item .gallery-caption-content {
+    font-size: 1.2em;
+  }
+  .block-chamber-paintings .gallery-grid-item-wrapper {
+    height: 420px;
   }
 }
 

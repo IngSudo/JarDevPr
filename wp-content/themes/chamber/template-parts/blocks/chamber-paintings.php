@@ -37,7 +37,8 @@ $paintings = $args['paintings'] ?? [];
             $type = sanitize_title($painting['type']);
             ?>
 
-            <figure class="gallery-grid-item category-<?= esc_attr($type); ?>">
+            <figure class="gallery-grid-item category-<?= esc_attr($type); ?>" data-img="<?= esc_url($image['url']); ?>"
+                data-title="<?= esc_attr($painting['type']); ?>" data-desc="<?= esc_attr($description); ?>">
 
                 <div class="gallery-grid-item-wrapper">
                     <?php if (!empty($image['url'])): ?>
@@ -57,6 +58,23 @@ $paintings = $args['paintings'] ?? [];
 
         <?php endforeach; ?>
 
+    </div>
+
+    <div class="block-chamber-paintings__modal">
+        <div class="block-chamber-paintings__modal__overlay"></div>
+        <span class="block-chamber-paintings__modal__close">&times;</span>
+
+        <div class="block-chamber-paintings__modal__content">
+            <div class="block-chamber-paintings__modal__wrapper">
+                <span class="block-chamber-paintings__modal__arrow block-chamber-paintings__modal__arrow--left">&#8249;</span>
+
+                <img class="block-chamber-paintings__modal__img" src="" alt="">
+
+                <span class="block-chamber-paintings__modal__arrow block-chamber-paintings__modal__arrow--right">&#8250;</span>
+            </div>
+            <p class="block-chamber-paintings__modal__desc"></p>
+            <button class="block-chamber-paintings__modal__btn button-primary">inquire</button>
+        </div>
     </div>
 
 </div>

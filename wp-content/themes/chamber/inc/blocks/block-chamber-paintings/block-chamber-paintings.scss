@@ -143,10 +143,12 @@
 
             &--left {
                 left: clamp(-50px, -5vw, 0px);
+                padding-left: 20px;
             }
 
             &--right {
                 right: clamp(-50px, -5vw, 0px);
+                padding-right: 20px;
             }
         }
     }

@@ -1,0 +1,334 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0 !important;
+}
+
+body {
+  margin: 0;
+  font-family: "open-sans", sans-serif;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "open-sans", sans-serif;
+  font-weight: 300;
+}
+
+h1,
+.chamber-h1 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+h2,
+.chamber-h2 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: #D8D8D8;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.chamber-header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.chamber-header__container {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chamber-header__logo img {
+  height: 75px;
+  width: auto;
+}
+.chamber-header__toggle {
+  width: 28px;
+  height: 18px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.chamber-header__toggle span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+  transition: transform 0.3s ease, background 0.3s ease, top 0.3s ease;
+}
+.chamber-header__toggle span:nth-child(1) {
+  top: 0;
+}
+.chamber-header__toggle span:nth-child(2) {
+  bottom: 0;
+}
+.chamber-header__toggle.active span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  background: #000;
+}
+.chamber-header__toggle.active span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  background: #000;
+}
+.chamber-header__nav {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.chamber-header__nav.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.chamber-header__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.chamber-header__menu li a {
+  font-size: 45px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+}
+.chamber-header__social {
+  display: none;
+}
+.chamber-header__nav.active ~ .chamber-header__social {
+  display: flex;
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  justify-content: center;
+}
+.chamber-header__instagram-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: opacity 0.3s ease;
+}
+@media (min-width: 992px) {
+  .chamber-header__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+  }
+  .chamber-header__logo img {
+    height: 100px;
+  }
+  .chamber-header__toggle {
+    display: none;
+  }
+  .chamber-header__nav {
+    position: static;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    padding-right: 0;
+    flex-direction: row;
+  }
+  .chamber-header__menu {
+    flex-direction: row;
+    gap: 32px;
+    text-align: left;
+  }
+  .chamber-header__menu li a {
+    position: relative;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+    color: #ffffff;
+  }
+  .chamber-header__menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+  }
+  .chamber-header__menu li a:hover::after, .chamber-header__menu li a.active::after {
+    width: 100%;
+  }
+  .chamber-header__menu li a:hover {
+    opacity: 0.8;
+  }
+  .chamber-header__menu .current-menu-item > a::after {
+    width: 100%;
+  }
+  .chamber-header__social {
+    padding-left: 20px;
+    margin-top: 0;
+    display: flex;
+  }
+  .chamber-header__social a {
+    display: flex;
+    align-items: center;
+  }
+  .chamber-header__instagram-icon {
+    color: #ffffff;
+  }
+}
+
+.chamber-footer {
+  background-color: #000;
+  color: #ffffff;
+  padding: 15px 35px;
+}
+.chamber-footer__container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.chamber-footer__left {
+  flex: unset;
+}
+.chamber-footer__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.chamber-footer__logo {
+  height: 75px;
+  width: auto;
+}
+.chamber-footer__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.chamber-footer__menu li a {
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+.chamber-footer__menu li a:hover {
+  opacity: 0.6;
+}
+.chamber-footer__copyright p {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+@media (min-width: 1024px) {
+  .chamber-footer__container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .chamber-footer__right {
+    align-items: flex-end;
+  }
+  .chamber-footer__menu li a {
+    font-size: 26px;
+  }
+}
+
+.button-primary {
+  font-family: "open-sans", sans-serif;
+  padding: 0.75rem clamp(2rem, 6vw, 6rem);
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: clamp(14px, 2.5vw, 16px);
+  transition: background 0.3s;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.button-primary:hover {
+  background-color: #333;
+}
+
+.chamber-home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+.chamber-home__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.chamber-home__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
+
+/*# sourceMappingURL=style.css.map */

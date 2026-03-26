@@ -1,0 +1,12 @@
+{
+  "name": "acf/block-title-button",
+  "title": "Title - Button",
+  "description": "Title with button component",
+  "category": "chamber",
+  "icon": "editor-alignleft",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "template.php"
+  },
+  "style": "block-title-button"
+}

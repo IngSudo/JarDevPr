@@ -1,0 +1,32 @@
+.block-title-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+}
+.block-title-button__tl-wrap {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 15px;
+}
+.block-title-button__title {
+  font-size: clamp(18px, 3vw, 35px);
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #333;
+}
+.block-title-button__button {
+  padding: 0.75rem clamp(2rem, 6vw, 6rem);
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: clamp(14px, 2.5vw, 16px);
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+.block-title-button__button:hover {
+  background-color: #333;
+}
+
+/*# sourceMappingURL=block-title-button.css.map */

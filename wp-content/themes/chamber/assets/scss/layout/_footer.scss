@@ -1,0 +1,71 @@
+@use "../base/variables" as *;
+
+.chamber-footer {
+  background-color: $chamber-color-black;
+  color: $chamber-color-white;
+  padding: 15px 35px;
+
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+  }
+
+  &__left {
+    flex: unset;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 10px;
+  }
+
+  &__logo {
+    height: 75px;
+    width: auto;
+  }
+
+  &__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      a {
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: normal;
+        font-size: 20px; 
+        text-transform: uppercase;
+        transition: opacity .3s ease;
+
+        &:hover {
+          opacity: .6;
+        }
+      }
+    }
+  }
+
+  &__copyright p {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  @media (min-width: 1024px) {
+    &__container {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    &__right {
+      align-items: flex-end;
+    }
+
+    &__menu li a {
+      font-size: 26px;
+    }
+  }
+}

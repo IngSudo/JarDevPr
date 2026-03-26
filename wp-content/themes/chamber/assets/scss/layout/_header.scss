@@ -1,0 +1,219 @@
+@use "../base/variables" as *;
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.chamber-header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  &__container {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    img {
+      height: 75px;
+      width: auto;
+    }
+  }
+
+&__toggle {
+  width: 28px;
+  height: 18px;
+  position: relative;   
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+
+  span {
+    position: absolute;   
+    left: 0;
+    width: 100%;
+    height: 1px;          
+    background: $chamber-color-white;
+    transition: transform .3s ease, background .3s ease, top .3s ease;
+  }
+
+  span:nth-child(1) {
+    top: 0;
+  }
+
+  span:nth-child(2) {
+    bottom: 0;
+  }
+}
+
+  &__toggle.active span:nth-child(1) {
+    top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  background: #000;
+  }
+
+  &__toggle.active span:nth-child(2) {
+    top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  background: #000
+  }
+
+  &__nav {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity .3s ease, transform .3s ease;
+  }
+
+  &__nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      a {
+        font-size: 45px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__social {
+    display: none;
+  }
+
+  &__nav.active~&__social {
+    display: flex;
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  &__instagram-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: opacity .3s ease;
+  }
+
+
+  @media (min-width: 992px) {
+
+    &__container {
+      max-width: $chamber-max-width;
+      margin: 0 auto;
+      padding: 20px 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__logo {
+      img {
+        height: 100px;
+      }
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__nav {
+      position: static;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      background: transparent;
+      padding-right: 0;
+      flex-direction: row;
+    }
+
+    &__menu {
+      flex-direction: row;
+      gap: $chamber-spacing-lg;
+      text-align: left;
+
+      li {
+        a {
+          position: relative;
+          font-size: 18px;
+          font-weight: 300;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          transition: opacity .3s ease;
+          color: $chamber-color-white;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+          }
+
+          &:hover::after,
+          &.active::after {
+            width: 100%;
+          }
+
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+
+      .current-menu-item>a::after {
+        width: 100%;
+      }
+    }
+
+    &__social {
+      padding-left: 20px;
+      margin-top: 0;
+      display: flex;
+    }
+
+    &__social a {
+      display: flex;
+      align-items: center;
+    }
+
+    &__instagram-icon {
+      color: $chamber-color-white;
+    }
+  }
+}
